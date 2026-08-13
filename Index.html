@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apparel Group Qatar · Recruitment Portal</title>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fa;--panel:#fff;--ink:#101820;--muted:#66727f;--line:#e6eaf0;--accent:#c62828;--accent2:#8f1515;--soft:#fff1f1;--green:#16845b;--amber:#b7791f;--shadow:0 12px 34px rgba(16,24,40,.07);--r:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif}button,input,select{font:inherit}
+.hidden{display:none!important}.app{min-height:100vh}.login{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;background:#101820}.loginHero{padding:64px 7vw;display:flex;flex-direction:column;justify-content:center;color:white;background:radial-gradient(circle at 20% 20%,rgba(198,40,40,.28),transparent 35%),linear-gradient(135deg,#101820,#17232d)}.brandmark{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em}.brandbox{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:800}.heroTitle{font-size:clamp(42px,5vw,76px);line-height:.98;letter-spacing:-.065em;max-width:760px;margin:55px 0 24px}.heroCopy{color:#b9c4ce;max-width:600px;line-height:1.7}.loginPanel{background:#fff;display:flex;align-items:center;padding:50px}.loginCard{width:min(430px,100%);margin:auto}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:800}.loginCard h1{font-size:32px;letter-spacing:-.04em;margin:10px 0}.loginCard p{color:var(--muted);line-height:1.6}.field{margin:18px 0}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:8px}.field input,.field select{width:100%;border:1px solid var(--line);background:#fff;padding:13px 14px;border-radius:12px;outline:none;transition:.2s}.field input:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(198,40,40,.09)}.primary{width:100%;border:0;background:var(--accent);color:#fff;padding:14px;border-radius:12px;font-weight:800;cursor:pointer;transition:.2s}.primary:hover{background:var(--accent2);transform:translateY(-1px)}.error{color:#a61b1b;background:#fff1f1;padding:11px 12px;border-radius:10px;font-size:12px;margin:12px 0}.shell{min-height:100vh}.topbar{height:72px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:20}.topbrand{display:flex;align-items:center;gap:11px;font-weight:800}.topbrand small{display:block;color:var(--muted);font-size:10px;font-weight:600;margin-top:2px}.topactions{display:flex;align-items:center;gap:9px}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 12px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer}.btn:hover{border-color:#c8cfd8;background:#fafbfc}.btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.accent:hover{background:var(--accent2)}.userpill{display:flex;align-items:center;gap:9px;border:1px solid var(--line);padding:6px 10px;border-radius:12px;font-size:12px}.avatar{width:28px;height:28px;border-radius:9px;background:#f2d4d4;color:#8e1717;display:grid;place-items:center;font-weight:800}.wrap{max-width:1440px;margin:auto;padding:30px}.heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:24px}.heading h2{font-size:30px;letter-spacing:-.045em;margin:5px 0}.heading p{color:var(--muted);font-size:13px;margin:0}.statusline{font-size:11px;color:var(--muted);text-align:right}.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.kpi{padding:18px;min-height:126px}.kpi .label{font-size:11px;color:var(--muted);font-weight:700}.kpi .value{font-size:29px;font-weight:800;letter-spacing:-.05em;margin-top:18px}.kpi .hint{font-size:10px;color:var(--muted);margin-top:4px}.grid3{display:grid;grid-template-columns:1.15fr .85fr 1.2fr;gap:14px;margin-bottom:18px}.chartcard{padding:18px;height:340px}.charttitle{font-weight:800;font-size:13px}.chartsub{font-size:11px;color:var(--muted);margin-top:4px;margin-bottom:10px}.chartwrap{height:270px}.tablecard{padding:0;overflow:hidden}.tablehead{padding:18px;display:flex;justify-content:space-between;gap:14px;align-items:center;border-bottom:1px solid var(--line)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filters input,.filters select{border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:11px;background:#fff}.tablewrap{overflow:auto;max-height:520px}table{width:100%;border-collapse:collapse;font-size:11px}th{position:sticky;top:0;background:#fafbfc;color:#65717d;text-align:left;padding:12px 14px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);cursor:pointer}td{padding:13px 14px;border-bottom:1px solid #eef1f4;vertical-align:top}tr:hover td{background:#fcfcfd}.tag{display:inline-flex;padding:5px 8px;border-radius:999px;background:#f0f2f5;font-size:10px;font-weight:700;white-space:nowrap}.tag.green{background:#eaf7f1;color:#0c744e}.tag.red{background:#fff0f0;color:#a31c1c}.tag.amber{background:#fff7e8;color:#98630d}.muted{color:var(--muted)}.empty{padding:65px;text-align:center;color:var(--muted)}.adminbar{display:flex;gap:10px;align-items:center;margin-bottom:18px}.notice{background:#fff8e8;border:1px solid #f0ddb2;color:#805d16;border-radius:13px;padding:12px 14px;font-size:11px;line-height:1.5;margin-bottom:18px}.modal{position:fixed;inset:0;background:rgba(15,23,32,.55);backdrop-filter:blur(5px);display:grid;place-items:center;z-index:50;padding:20px}.modalbox{width:min(720px,100%);background:#fff;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.2);padding:24px}.modalhead{display:flex;justify-content:space-between;align-items:center}.modalhead h3{margin:0;letter-spacing:-.03em}.close{border:0;background:#f3f4f6;border-radius:9px;width:34px;height:34px;cursor:pointer}.drop{border:1px dashed #cbd2da;border-radius:15px;padding:32px;text-align:center;margin:18px 0;background:#fafbfc}.drop strong{display:block;margin-bottom:5px}.help{font-size:11px;color:var(--muted);line-height:1.6}.progress{height:4px;background:#eee;border-radius:999px;overflow:hidden;margin-top:15px}.progress i{display:block;height:100%;background:var(--accent);width:0;transition:.25s}.accounts{max-height:420px;overflow:auto;border:1px solid var(--line);border-radius:12px}.accountrow{display:grid;grid-template-columns:1fr 1fr 1fr;padding:11px 13px;border-bottom:1px solid var(--line);font-size:11px}.accountrow:last-child{border-bottom:0}.spinner{display:inline-block;width:12px;height:12px;border:2px solid #ddd;border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}.grid3{grid-template-columns:1fr 1fr}.grid3 .chartcard:last-child{grid-column:1/-1}}@media(max-width:760px){.login{grid-template-columns:1fr}.loginHero{display:none}.loginPanel{padding:28px}.topbar{padding:0 15px}.topactions .btn{display:none}.wrap{padding:18px}.kpis{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.heading{align-items:flex-start;flex-direction:column}.userpill{display:none}}
+</style>
+</head>
+<body>
+<div id="login" class="login">
+  <section class="loginHero">
+    <div class="brandmark"><span class="brandbox">AG</span><span>APPAREL GROUP<br><small style="color:#9ba8b3">QATAR · RECRUITMENT</small></span></div>
+    <div class="heroTitle">Recruitment,<br><span style="color:#df5555">beautifully</span> managed.</div>
+    <p class="heroCopy">A focused command center for recruitment teams — live candidate visibility, manager-level dashboards, and a single source of truth for the master list.</p>
+  </section>
+  <section class="loginPanel">
+    <div class="loginCard">
+      <div class="eyebrow">Apparel Group Qatar</div>
+      <h1>Sign in</h1>
+      <p>Use your portal credentials to continue to the recruitment workspace.</p>
+      <div id="loginError" class="error hidden"></div>
+      <form id="loginForm">
+        <div class="field"><label>Username</label><input id="username" autocomplete="username" required placeholder="Enter username"></div>
+        <div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Enter password"></div>
+        <button class="primary" type="submit">Continue <span style="opacity:.7">→</span></button>
+      </form>
+      <p style="font-size:10px;margin-top:25px">Internal recruitment portal · Qatar</p>
+    </div>
+  </section>
+</div>
+
+<div id="portal" class="shell hidden">
+  <header class="topbar">
+    <div class="topbrand"><span class="brandbox">AG</span><span>APPAREL GROUP <small>QATAR · RECRUITMENT PORTAL</small></span></div>
+    <div class="topactions">
+      <button class="btn" id="refreshBtn">↻ Refresh now</button>
+      <button class="btn accent hidden" id="uploadBtn">＋ Upload master list</button>
+      <div class="userpill"><span class="avatar" id="avatar">A</span><span id="userName">Admin</span></div>
+      <button class="btn" id="logoutBtn">Logout</button>
+    </div>
+  </header>
+  <main class="wrap">
+    <div id="configNotice" class="notice hidden"></div>
+    <div class="heading">
+      <div><div class="eyebrow" id="roleEyebrow">MASTER ADMIN</div><h2 id="pageTitle">Recruitment overview</h2><p id="pageSubtitle">All candidates across the master recruitment list.</p></div>
+      <div class="statusline"><div id="dataStatus">Ready</div><div>Last updated <b id="lastUpdated">—</b></div></div>
+    </div>
+    <div id="drill" class="adminbar hidden">
+      <select class="field" id="managerDrill" style="margin:0;width:280px"><option value="">All Area Managers</option></select>
+      <button class="btn" id="accountsBtn">Manage accounts</button>
+    </div>
+    <section class="kpis" id="kpis"></section>
+    <section class="grid3">
+      <div class="card chartcard"><div class="charttitle">Nationality mix</div><div class="chartsub">Candidate count by nationality</div><div class="chartwrap"><canvas id="nationalityChart"></canvas></div></div>
+      <div class="card chartcard"><div class="charttitle">Gender ratio</div><div class="chartsub">Male vs female representation</div><div class="chartwrap"><canvas id="genderChart"></canvas></div></div>
+      <div class="card chartcard"><div class="charttitle">Recruitment status</div><div class="chartsub">Current document / status stages</div><div class="chartwrap"><canvas id="statusChart"></canvas></div></div>
+    </section>
+    <section class="card tablecard">
+      <div class="tablehead"><div><div class="charttitle">Candidate master list</div><div class="chartsub" style="margin-bottom:0">Search, filter and sort the current view.</div></div>
+        <div class="filters"><input id="search" placeholder="Search candidate…"><select id="statusFilter"><option value="">All status</option></select><select id="nationalityFilter"><option value="">All nationalities</option></select><select id="genderFilter"><option value="">All genders</option></select></div>
+      </div>
+      <div class="tablewrap"><table><thead><tr><th data-sort="Name">Candidate</th><th data-sort="Area Managers">Area Manager</th><th data-sort="Division">Division</th><th data-sort="Brand">Brand</th><th data-sort="Nationality">Nationality</th><th data-sort="Gender">Gender</th><th data-sort="Designation">Designation</th><th data-sort="Visa/ Document Status">Status</th><th data-sort="Source of Recruitment">Source</th><th data-sort="Gross Salary">Gross Salary</th></tr></thead><tbody id="tbody"></tbody></table><div id="empty" class="empty hidden">No candidates match the current filters.</div></div>
+    </section>
+  </main>
+</div>
+
+<div id="uploadModal" class="modal hidden">
+  <div class="modalbox">
+    <div class="modalhead"><div><div class="eyebrow">MASTER ADMIN</div><h3>Upload master recruitment list</h3></div><button class="close" id="closeUpload">×</button></div>
+    <div class="drop"><strong>Choose the latest Excel master file</strong><span class="help">Your actual workbook can contain multiple sheets. The portal automatically finds the worksheet containing the recruitment headers.</span><div style="margin-top:18px"><input id="fileInput" type="file" accept=".xlsx,.xls,.csv"></div></div>
+    <div id="uploadMsg" class="help">The selected file is parsed in your browser first. When GitHub settings are configured, it is then committed to <b>data.xlsx</b> in your repository.</div>
+    <div class="progress"><i id="uploadProgress"></i></div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
+    <div class="eyebrow">GitHub upload settings</div>
+    <div class="field"><label>GitHub Personal Access Token <span class="muted">(stored only in this browser)</span></label><input id="tokenInput" type="password" placeholder="github_pat_…"><button class="btn" id="saveToken" style="margin-top:8px">Save token locally</button></div>
+    <div class="field" style="margin-bottom:0"><label>Security note</label><div class="help">The token is never written into this HTML file. It is stored in localStorage on this browser only. Use a narrowly scoped fine-grained token for one repository and Contents: Read and write. Anyone who gains access to this browser profile could potentially use the saved token, so use a dedicated token and remove it from GitHub when no longer needed.</div></div>
+  </div>
+</div>
+
+<div id="accountsModal" class="modal hidden"><div class="modalbox"><div class="modalhead"><div><div class="eyebrow">MASTER ADMIN</div><h3>Area Manager accounts</h3></div><button class="close" id="closeAccounts">×</button></div><p class="help">Credentials are maintained in the HTML source. Change the <b>MANAGER_ACCOUNTS</b> array when managers join or leave.</p><div class="accounts" id="accountsList"></div></div></div>
+
+<script>
+/* ============================================================
+   APPAREL GROUP QATAR — RECRUITMENT PORTAL
+   ============================================================
+   DATA FILE:
+     data.xlsx in the same GitHub repository as this HTML.
+
+   GITHUB SETTINGS:
+     Change these three constants before deployment.
+     OWNER and REPO are your GitHub repository.
+     BRANCH is normally "main".
+     DATA_PATH is the exact file path in the repo.
+
+   IMPORTANT:
+     GitHub Pages is public. Because data.xlsx is public, a static
+     client-side portal cannot provide cryptographic/true security
+     against a technical user downloading the workbook directly.
+     The manager filter below is strong against UI/URL manipulation,
+     but it is NOT a security boundary. For genuinely confidential
+     candidate data, use a server-side authenticated API.
+   ============================================================ */
+
+const GITHUB_OWNER = "YOUR_GITHUB_USERNAME";
+const GITHUB_REPO = "apparel-recruitment-portal";
+const GITHUB_BRANCH = "main";
+const DATA_PATH = "data.xlsx";
+
+const DATA_URL = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${DATA_PATH}`;
+const GITHUB_CONTENTS_API = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`;
+
+const REFRESH_MINUTES = 3;
+const TOKEN_KEY = "ag_qatar_github_token";
+
+const MASTER_ADMIN = {
+  username: "ag-admin",
+  password: "ZXg4yGSv8sU92q"
+};
+
+// These names are taken from the uploaded workbook's Sheet1 "Area Managers" column.
+// Edit this list when managers join/leave/change credentials.
+const MANAGER_ACCOUNTS = [
+  {
+    "name": "Ahmed",
+    "username": "ag-ahmed",
+    "password": "CREukndWDdvQ"
+  },
+  {
+    "name": "Amit",
+    "username": "ag-amit",
+    "password": "s7Y52W4B6ju2"
+  },
+  {
+    "name": "Arfath",
+    "username": "ag-arfath",
+    "password": "etZgCEhUD5j3"
+  },
+  {
+    "name": "Govind",
+    "username": "ag-govind",
+    "password": "LeBgXydSkY7D"
+  },
+  {
+    "name": "Govinda",
+    "username": "ag-govinda",
+    "password": "haTqFvWWJC6w"
+  },
+  {
+    "name": "Irfan",
+    "username": "ag-irfan",
+    "password": "i3u8MaNC4jD7"
+  },
+  {
+    "name": "Karishma",
+    "username": "ag-karishma",
+    "password": "8uhPK4S8GUgq"
+  },
+  {
+    "name": "Kumar",
+    "username": "ag-kumar",
+    "password": "f4adJ8zgzQsf"
+  },
+  {
+    "name": "Mamun",
+    "username": "ag-mamun",
+    "password": "ynSZFKd3CJY3"
+  },
+  {
+    "name": "Paresh",
+    "username": "ag-paresh",
+    "password": "4ffxficxx47E"
+  },
+  {
+    "name": "Pradeep",
+    "username": "ag-pradeep",
+    "password": "X4WshQYmQkoc"
+  },
+  {
+    "name": "Prakash",
+    "username": "ag-prakash",
+    "password": "Z6V7kiqaKUXe"
+  },
+  {
+    "name": "Prince",
+    "username": "ag-prince",
+    "password": "9o3tuNTdZma2"
+  },
+  {
+    "name": "Raju",
+    "username": "ag-raju",
+    "password": "L3wyUpvpDEzS"
+  },
+  {
+    "name": "Ravinder",
+    "username": "ag-ravinder",
+    "password": "y6fBA2d8u8vE"
+  },
+  {
+    "name": "Samar",
+    "username": "ag-samar",
+    "password": "i7BtCsZxWS5B"
+  },
+  {
+    "name": "Saurabh",
+    "username": "ag-saurabh",
+    "password": "34sLX3wgN5pC"
+  },
+  {
+    "name": "Shashank",
+    "username": "ag-shashank",
+    "password": "qTV94YQvPW5H"
+  },
+  {
+    "name": "Soumya",
+    "username": "ag-soumya",
+    "password": "m6WSCgv84SFB"
+  },
+  {
+    "name": "Sunil",
+    "username": "ag-sunil",
+    "password": "Wnp9kQzKgdyd"
+  },
+  {
+    "name": "Talih",
+    "username": "ag-talih",
+    "password": "b9H6XVf4KeMS"
+  },
+  {
+    "name": "Wilfred",
+    "username": "ag-wilfred",
+    "password": "janm5BDZPJij"
+  },
+  {
+    "name": "Zeinab",
+    "username": "ag-zeinab",
+    "password": "toex3FCdt2yu"
+  },
+  {
+    "name": "pradeep",
+    "username": "ag-pradeep2",
+    "password": "mzgn6UbugyCc"
+  }
+];
+
+let currentUser=null, rows=[], filtered=[], sortKey="Name", sortDir=1, charts={};
+let timer=null;
+
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=v=>String(v??"").trim().toLowerCase();
+const key=v=>norm(v).replace(/[^a-z0-9]+/g,"");
+function matchHeader(headers, aliases){
+  const h=headers.map(x=>({raw:x,k:key(x)}));
+  for(const a of aliases){ const found=h.find(x=>x.k===key(a)); if(found)return found.raw; }
+  return null;
+}
+function normalizeRow(r){
+  const headers=Object.keys(r);
+  const aliases={
+    manager:["Area Managers","Area Manager Name","Area Manager","Manager"],
+    name:["Name","Candidate Name","Candidate"],
+    nationality:["Nationality"],
+    gender:["Gender","Sex"],
+    division:["Division"],
+    brand:["Brand"],
+    designation:["Designation","Position","Job Title"],
+    grade:["Grade"],
+    source:["Source of Recruitment","Recruitment Source","Source"],
+    salary:["Gross Salary","Gross Salary Package QAR","Salary"],
+    status:["Visa/ Document Status","Visa / Document Status","Status","Stage"],
+    remarks:["Remarks","Remark","Comments"]
+  };
+  const o={};
+  for(const [k,a] of Object.entries(aliases)){const h=matchHeader(headers,a);o[k]=h?r[h]:"";}
+  return {...r,__m:o};
+}
+function statusType(s){
+  const x=norm(s);
+  if(x.includes("reject"))return"rejected";
+  if(x.includes("hire")||x.includes("joined"))return"hired";
+  return"inprocess";
+}
+function statusLabel(s){return s||"Not recorded"}
+function getVisibleRows(){
+  if(!currentUser)return[];
+  let out=rows;
+  if(currentUser.role==="manager"){
+    out=out.filter(r=>norm(r.__m.manager)===norm(currentUser.name));
+  } else {
+    const m=$("managerDrill")?.value;
+    if(m)out=out.filter(r=>norm(r.__m.manager)===norm(m));
+  }
+  return out;
+}
+function login(u,p){
+  if(u===MASTER_ADMIN.username&&p===MASTER_ADMIN.password)return{role:"admin",name:"Master Admin",username:u};
+  const m=MANAGER_ACCOUNTS.find(x=>x.username===u&&x.password===p);
+  return m?{role:"manager",name:m.name,username:m.username}:null;
+}
+$("loginForm").addEventListener("submit",e=>{
+  e.preventDefault(); const u=$("username").value.trim(),p=$("password").value;
+  const user=login(u,p);
+  if(!user){$("loginError").textContent="Incorrect username or password."; $("loginError").classList.remove("hidden");return}
+  currentUser=user;$("login").classList.add("hidden");$("portal").classList.remove("hidden");
+  $("userName").textContent=user.name;$("avatar").textContent=user.name.slice(0,1).toUpperCase();
+  $("uploadBtn").classList.toggle("hidden",user.role!=="admin");
+  $("drill").classList.toggle("hidden",user.role!=="admin");
+  $("roleEyebrow").textContent=user.role==="admin"?"MASTER ADMIN":"AREA MANAGER";
+  $("pageTitle").textContent=user.role==="admin"?"Recruitment overview":"My recruitment dashboard";
+  if(user.role==="admin"){
+    $("managerDrill").innerHTML='<option value="">All Area Managers</option>'+MANAGER_ACCOUNTS.map(m=>`<option>${esc(m.name)}</option>`).join("");
+  }
+  showConfigNotice(); fetchData(); startRefresh();
+});
+$("logoutBtn").onclick=()=>{currentUser=null;clearInterval(timer);$("portal").classList.add("hidden");$("login").classList.remove("hidden");$("password").value=""};
+function showConfigNotice(){
+  if(GITHUB_OWNER==="YOUR_GITHUB_USERNAME"){
+    $("configNotice").classList.remove("hidden");
+    $("configNotice").innerHTML="<b>One-time setup:</b> Edit GITHUB_OWNER / GITHUB_REPO / GITHUB_BRANCH at the top of the HTML. The portal is currently in configuration mode.";
+  }else $("configNotice").classList.add("hidden");
+}
+async function fetchData(){
+  setStatus("Loading master list…","<span class='spinner'></span>");
+  try{
+    const res=await fetch(DATA_URL+"?v="+Date.now(),{cache:"no-store"});
+    if(!res.ok)throw new Error("Could not fetch data.xlsx (HTTP "+res.status+").");
+    const buf=await res.arrayBuffer();
+    const wb=XLSX.read(buf,{type:"array",cellDates:true});
+    let chosen=null,best=0;
+    for(const sn of wb.SheetNames){
+      const ws=wb.Sheets[sn], a=XLSX.utils.sheet_to_json(ws,{header:1,defval:"",raw:false});
+      for(let i=0;i<Math.min(a.length,15);i++){
+        const ks=a[i].map(key);
+        const score=(ks.includes("name")?3:0)+(ks.includes("areamanagers")||ks.includes("areamanagername")?3:0)+(ks.includes("nationality")?1:0)+(ks.includes("gender")?1:0);
+        if(score>best){best=score;chosen={sn,ws};}
+      }
+    }
+    if(!chosen)throw new Error("No recruitment worksheet was found. Expected a sheet containing Name and Area Managers columns.");
+    rows=XLSX.utils.sheet_to_json(chosen.ws,{defval:"",raw:false,blankrows:false}).map(normalizeRow).filter(r=>norm(r.__m.name));
+    $("lastUpdated").textContent=new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+    setStatus(`Live · ${chosen.sn} · ${rows.length} candidates`,"Live");
+    populateFilters();render();
+  }catch(e){
+    setStatus("Data unavailable","Offline");
+    $("tbody").innerHTML="";$("empty").classList.remove("hidden");$("empty").innerHTML=`<b>Couldn’t refresh the master list.</b><br><span class="help">${esc(e.message)}</span>`;
+  }
+}
+function startRefresh(){clearInterval(timer);timer=setInterval(()=>fetchData(),REFRESH_MINUTES*60000)}
+function setStatus(a,b){$("dataStatus").innerHTML=b;$("pageSubtitle").textContent=a}
+function populateFilters(){
+  const v=getVisibleRows(), uniq=k=>[...new Set(v.map(r=>r.__m[k]).filter(Boolean).map(String))].sort();
+  $("statusFilter").innerHTML='<option value="">All status</option>'+uniq("status").map(x=>`<option>${esc(x)}</option>`).join("");
+  $("nationalityFilter").innerHTML='<option value="">All nationalities</option>'+uniq("nationality").map(x=>`<option>${esc(x)}</option>`).join("");
+  $("genderFilter").innerHTML='<option value="">All genders</option>'+uniq("gender").map(x=>`<option>${esc(x)}</option>`).join("");
+}
+function render(){
+  const base=getVisibleRows(), s=norm($("search").value), st=$("statusFilter").value, nat=$("nationalityFilter").value, gen=$("genderFilter").value;
+  filtered=base.filter(r=>(!s||norm(r.__m.name).includes(s))&&(!st||r.__m.status===st)&&(!nat||r.__m.nationality===nat)&&(!gen||r.__m.gender===gen));
+  renderKPIs(base);renderCharts(base);renderTable(filtered);
+  if(currentUser.role==="admin")$("pageSubtitle").textContent=$("managerDrill").value?`Drill-down · ${$("managerDrill").value}`:"All candidates across the central master list.";
+  else $("pageSubtitle").textContent=`Candidates recruited by ${currentUser.name}.`;
+}
+function renderKPIs(v){
+  const total=v.length,h=v.filter(r=>statusType(r.__m.status)==="hired").length,rej=v.filter(r=>statusType(r.__m.status)==="rejected").length,inp=total-h-rej,male=v.filter(r=>norm(r.__m.gender)==="male").length,nat=new Set(v.map(r=>r.__m.nationality).filter(Boolean)).size;
+  const ratio=total?Math.round(male/total*100):0;
+  $("kpis").innerHTML=[
+    ["Total candidates",total,"Current visible scope"],
+    ["Hired",h,"Status contains hired / joined"],
+    ["In process",inp,"Not hired or rejected"],
+    ["Rejected",rej,"Status contains rejected"],
+    ["Male ratio",ratio+"%","Share of candidates"],
+    ["Nationalities",nat,"Represented in scope"]
+  ].map(x=>`<div class="card kpi"><div class="label">${x[0]}</div><div class="value">${x[1]}</div><div class="hint">${x[2]}</div></div>`).join("");
+}
+function chartDestroy(n){if(charts[n])charts[n].destroy()}
+function renderCharts(v){
+  const nat={};v.forEach(r=>nat[r.__m.nationality||"Unknown"]=(nat[r.__m.nationality||"Unknown"]||0)+1);
+  const gen={Male:0,Female:0,Other:0};v.forEach(r=>{const g=String(r.__m.gender||"Other");gen[g]=gen[g]==null?1:gen[g]+1});
+  const stat={};v.forEach(r=>stat[statusLabel(r.__m.status)]=(stat[statusLabel(r.__m.status)]||0)+1);
+  chartDestroy("nat");chartDestroy("gen");chartDestroy("status");
+  const base={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:10,font:{size:10}}}}};
+  charts.nat=new Chart($("nationalityChart"),{type:"doughnut",data:{labels:Object.keys(nat),datasets:[{data:Object.values(nat),backgroundColor:["#c62828","#263238","#d9a441","#2f7f67","#6f7780","#b85c38","#7c5ac7","#2c7da0"],borderWidth:2,borderColor:"#fff"}]},options:{...base,cutout:"66%"}});
+  charts.gen=new Chart($("genderChart"),{type:"doughnut",data:{labels:Object.keys(gen),datasets:[{data:Object.values(gen),backgroundColor:["#c62828","#f0a2a2","#cbd2d9"],borderWidth:2,borderColor:"#fff"}]},options:{...base,cutout:"66%"}});
+  charts.status=new Chart($("statusChart"),{type:"bar",data:{labels:Object.keys(stat),datasets:[{label:"Candidates",data:Object.values(stat),backgroundColor:"#c62828",borderRadius:7,maxBarThickness:30}]},options:{...base,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:9}}},y:{beginAtZero:true,ticks:{precision:0},grid:{color:"#edf0f3"}}}}});
+}
+function renderTable(v){
+  $("empty").classList.toggle("hidden",v.length>0);
+  $("tbody").innerHTML=v.map(r=>{
+    const x=r.__m, t=statusType(x.status), salary=x.salary?Number(String(x.salary).replace(/,/g,"")).toLocaleString()+" QAR":"—";
+    return `<tr><td><b>${esc(x.name)}</b><div class="muted">${esc(x.grade||"")}</div></td><td>${esc(x.manager||"—")}</td><td>${esc(x.division||"—")}</td><td>${esc(x.brand||"—")}</td><td>${esc(x.nationality||"—")}</td><td>${esc(x.gender||"—")}</td><td>${esc(x.designation||"—")}</td><td><span class="tag ${t==="hired"?"green":t==="rejected"?"red":"amber"}">${esc(x.status||"Not recorded")}</span></td><td>${esc(x.source||"—")}</td><td>${salary}</td></tr>`;
+  }).join("");
+}
+["search","statusFilter","nationalityFilter","genderFilter","managerDrill"].forEach(id=>$(id).addEventListener("input",()=>{if(id==="managerDrill")populateFilters();render()}));
+document.querySelectorAll("th[data-sort]").forEach(th=>th.addEventListener("click",()=>{const k=th.dataset.sort;if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=1}filtered.sort((a,b)=>String(a[k]??"").localeCompare(String(b[k]??""))*sortDir);renderTable(filtered)}));
+$("refreshBtn").onclick=fetchData;
+
+$("uploadBtn").onclick=()=>{
+  $("tokenInput").value=localStorage.getItem(TOKEN_KEY)||"";
+  $("uploadMsg").innerHTML="Select the latest Excel file. The workbook is parsed locally; after confirmation, the original binary file is committed to <b>"+esc(DATA_PATH)+"</b> using the GitHub Contents API.";
+  $("uploadModal").classList.remove("hidden");
+};
+$("closeUpload").onclick=()=>$("uploadModal").classList.add("hidden");
+$("saveToken").onclick=()=>{const t=$("tokenInput").value.trim();if(t)localStorage.setItem(TOKEN_KEY,t);else localStorage.removeItem(TOKEN_KEY);alert(t?"Token saved only in this browser.":"Token removed from this browser.")};
+
+$("fileInput").addEventListener("change",async e=>{
+  const file=e.target.files[0];if(!file)return;
+  const prog=$("uploadProgress");prog.style.width="10%";
+  try{
+    const token=localStorage.getItem(TOKEN_KEY);
+    if(!token)throw new Error("Save your GitHub Personal Access Token in the panel first.");
+    const buf=await file.arrayBuffer();prog.style.width="30%";
+    // Validate the workbook locally and show the detected worksheet/row count.
+    const wb=XLSX.read(new Uint8Array(buf),{type:"array"});
+    let best={score:0,name:"",rows:0};
+    for(const sn of wb.SheetNames){
+      const ws=XLSX.utils.sheet_to_json(wb.Sheets[sn],{header:1,defval:"",raw:false});
+      for(const r of ws.slice(0,15)){const ks=r.map(key);const score=(ks.includes("name")?3:0)+(ks.includes("areamanagers")?3:0)+(ks.includes("nationality")?1:0);if(score>best.score)best={score,name:sn,rows:Math.max(0,ws.length-1)}}
+    }
+    if(best.score<6)throw new Error("The Excel file does not appear to contain the expected recruitment headers: Name + Area Managers.");
+    $("uploadMsg").innerHTML=`Detected <b>${esc(best.name)}</b> · approximately ${best.rows} data rows. Uploading the original Excel file to GitHub…`;
+    prog.style.width="45%";
+    const api=GITHUB_CONTENTS_API;
+    const existing=await fetch(api,{headers:{Authorization:"Bearer "+token,Accept:"application/vnd.github+json"}}).then(async r=>{if(r.status===404)return null;if(!r.ok)throw new Error("GitHub read failed (HTTP "+r.status+").");return r.json()});
+    prog.style.width="60%";
+    const bytes=new Uint8Array(buf);let binary="";const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.subarray(i,i+chunk));
+    const content=btoa(binary);
+    const body={message:`Update ${DATA_PATH} from Recruitment Portal`,content,branch:GITHUB_BRANCH};if(existing?.sha)body.sha=existing.sha;
+    const put=await fetch(api,{method:"PUT",headers:{Authorization:"Bearer "+token,Accept:"application/vnd.github+json","Content-Type":"application/json"},body:JSON.stringify(body)});
+    const result=await put.json();if(!put.ok)throw new Error(result.message||"GitHub upload failed.");
+    prog.style.width="100%";
+    $("uploadMsg").innerHTML=`<span style="color:#16845b;font-weight:800">✓ Upload successful.</span> GitHub committed <b>${esc(DATA_PATH)}</b>. GitHub Pages normally needs about 1–3 minutes to publish the new version.`;
+    setTimeout(()=>{fetchData();},3000);
+  }catch(err){prog.style.width="0";$("uploadMsg").innerHTML=`<span style="color:#a61b1b;font-weight:800">Upload failed:</span> ${esc(err.message||err)}`}
+  e.target.value="";
+});
+
+$("accountsBtn").onclick=()=>{$("accountsList").innerHTML='<div class="accountrow" style="font-weight:800;background:#fafbfc"><span>Name</span><span>Username</span><span>Password</span></div>'+MANAGER_ACCOUNTS.map(m=>`<div class="accountrow"><span>${esc(m.name)}</span><span>${esc(m.username)}</span><span>${esc(m.password)}</span></div>`).join("");$("accountsModal").classList.remove("hidden")};
+$("closeAccounts").onclick=()=>$("accountsModal").classList.add("hidden");
+
+showConfigNotice();
+</script>
+</body>
+</html>
